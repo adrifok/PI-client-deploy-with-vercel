@@ -6,7 +6,7 @@ import PokemonCreate from './components/PokemonCreate/PokemonCreate';
 import Detail from './components/Detail/Detail';
 import Error404 from './components/Error404/Error404';
 import axios from "axios";
-axios.defaults.baseURL = "pi-api-deploy-with-vercel-production.up.railway.app/";
+axios.defaults.baseURL = "https://pi-api-deploy-with-vercel-production.up.railway.app";
 
 function App() {
   return (
