@@ -16,7 +16,7 @@ export const CLEAN_POKEMONS = 'CLEAN_POKEMONS';
 export const getPokemons = () => {
     return async (dispatch) => {
         try {
-            let url = 'http://localhost:3001/pokemons';
+            let url = '/pokemons';
             let json = await axios.get(url);
             return dispatch({
                 type: GET_POKEMONS,
@@ -39,7 +39,7 @@ export const cleanPokemons = (dispatch) => {
 export const getAlltypes = () => {
     return async (dispatch) => {
         try {
-            let url = 'http://localhost:3001/types';
+            let url = '/types';
             let json = "http://localhost:3001"
             return dispatch({
                 type: GET_ALL_TYPES,
@@ -82,7 +82,7 @@ export const filterStr = (payload) => {
 export const getPokemonByName = (name) => {
     return async (dispatch) => {
         try {
-            var json = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
+            var json = await axios.get(`/pokemons?name=${name}`)
             return dispatch({
                 type: GET_POKEMON_NAME,
                 payload: json.data
@@ -98,7 +98,7 @@ export const getPokemonByName = (name) => {
 export const getDetail = (id) => {
     return async (dispatch) => {
         try{
-            var json = await axios.get(`http://localhost:3001/pokemons/${id}`);
+            var json = await axios.get(`/pokemons/${id}`);
             return dispatch({
                 type: GET_DETAILS,
                 payload: json.data
@@ -111,7 +111,7 @@ export const getDetail = (id) => {
 
 export function getDetailPromise(id) {
     return function (dispatch) {
-        axios.get(`http://localhost:3001/pokemons/${id}`)
+        axios.get(`/pokemons/${id}`)
         .then(res => res.data)
         .then(res => dispatch({
             type: GET_DETAILS,
@@ -132,7 +132,7 @@ export const cleanDetail = (dispatch) => {
 export const postPokemon = (payload) => {
     return async () => {
         try {
-            var createPoke = await axios.post('http://localhost:3001/pokemons', payload);
+            var createPoke = await axios.post('/pokemons', payload);
             console.log(createPoke);
             alert('Your Pokemon is ON!!');
             return createPoke;
