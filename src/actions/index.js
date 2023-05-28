@@ -40,7 +40,7 @@ export const getAlltypes = () => {
     return async (dispatch) => {
         try {
             let url = '/types';
-            let json = "http://localhost:3001"
+            let json = await axios.get(url);
             return dispatch({
                 type: GET_ALL_TYPES,
                 payload: json.data
